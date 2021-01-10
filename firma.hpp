@@ -64,32 +64,32 @@ public:
     double wynagrodzenie = pensja_inz*nInz+pensja_mag*nMag+pensja_mrk*nMrk+pensja_rob*nRob;
     stanKonta = stanKonta - wynagrodzenie;
   };
-	void hireEng()
+ 	void hireEng()
   {
-    inzynier pr;
-    pr.print();
-    prac.emplace_back(&pr);
+    inzynier *inz = new inzynier();
+    prac.emplace_back(inz);
+    prac.back()->print();
     nInz += 1;
   };
   void hireMrk()
   {
-    mrkt pr;
-    pr.print();
-    prac.emplace_back(&pr);
+    mrkt *pr = new mrkt();
+    prac.emplace_back(pr);
+    prac.back()->print();
     nMrk +=1;
   };
   void hireMag()
   {
-    magasiner pr;
-    pr.print();
-    prac.emplace_back(&pr);
+    magasiner *pr = new magasiner();
+    prac.emplace_back(pr);
+    prac.back()->print();
     nMag += 1;
   };
   void hireRbt()
   {
-    robt pr;
-    pr.print();
-    prac.emplace_back(&pr);
+    robt *pr = new robt();
+    prac.emplace_back(pr);
+    prac.back()->print();
     nRob += 1;
   };
   std::vector<pracownik*> get_prac()
